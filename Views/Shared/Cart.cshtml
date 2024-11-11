@@ -1,0 +1,100 @@
+﻿@model MvcMovie.Models.CartViewModel
+
+@{
+    ViewData["Title"] = "Shopping Cart";
+}
+
+<h1>Shopping Cart</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CartItems)
+        {
+            <tr>
+                <td>
+                    @{
+                        var images = new List<(string ImageUrl, string AltText)>
+                {
+                (item.Movie?.Image, item.Movie?.Title),
+                (item.Music?.Image, item.Music?.Title),
+                (item.Game?.Image, item.Game?.Title),
+                (item.Book?.Image, item.Book?.Title)
+                };
+
+                        int index = 0;
+                        bool imageDisplayed = false;
+
+                        while (index < images.Count && !imageDisplayed)
+                        {
+                            var (imageUrl, altText) = images[index];
+                            if (!string.IsNullOrEmpty(imageUrl))
+                            {
+                                <img src="@imageUrl" alt="@altText" style="width: 100px; height: auto;" />
+                                imageDisplayed = true;
+                            }
+                            index++;
+                        }
+
+                        if (!imageDisplayed)
+                        {
+                            <span>No Image</span>
+                        }
+                    }
+                </td>
+                <td>
+                    @{
+                        index = 0;
+                        bool titleDisplayed = false;
+
+                        while (index < images.Count && !titleDisplayed)
+                        {
+                            var (imageUrl, altText) = images[index];
+                            if (!string.IsNullOrEmpty(altText))
+                            {
+                                @altText
+                                titleDisplayed = true;
+                            }
+                            index++;
+                        }
+
+                        if (!titleDisplayed)
+                        {
+                            <span>Unknown Item</span>
+                        }
+                    }
+                </td>
+                <td>@item.Price</td>
+                <td>
+                    <form asp-action="UpdateQuantity" method="post">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <input type="number" name="quantity" value="@item.Quantity" min="1" style="width: 60px;" />
+                        <input type="submit" value="Update" class="btn btn-secondary" />
+                    </form>
+                </td>
+                <td>@(item.Price * item.Quantity)</td>
+                <td>
+                    <form asp-action="RemoveFromCart" method="post">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <input type="submit" value="Remove" class="btn btn-danger" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Total: @Model.TotalPrice</h2>
+
+<!-- Checkout Button -->
+<form asp-action="Checkout" method="get">
+    <input type="submit" value="Checkout" class="btn btn-primary" />
+</form>

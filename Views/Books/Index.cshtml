@@ -1,0 +1,83 @@
+﻿@model BookGenreViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center my-4">Books</h1>
+
+<div class="container">
+    <!-- Filter Section -->
+    <form asp-controller="Books" asp-action="Index" method="get" class="d-flex justify-content-center mb-5">
+        <select asp-for="BookGenre" asp-items="Model.Genres" class="form-select mx-2" style="width: 200px;">
+            <option value="">All Genres</option>
+        </select>
+        <input type="text" asp-for="SearchString" class="form-control mx-2" placeholder="Search by Title" style="width: 300px;" />
+        <input type="submit" value="Filter" class="btn btn-primary mx-2" />
+    </form>
+
+    <p>
+        <a asp-action="Create">Add Book</a>
+    </p>
+
+    <!-- Card Display for Books -->
+    <div class="row">
+        @foreach (var book in Model.Books!)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100" data-bs-toggle="modal" data-bs-target="#bookModal-@book.Id">
+                    <img src="@book.Image" class="card-img-top" alt="@book.Title" style="height: 400px; object-fit: contain; border-radius: 8px 8px 0 0;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">@book.Title</h5>
+                        <p class="card-text">
+                            <strong>Genre:</strong> @book.Genre <br />
+                            <strong>Release Date:</strong> @book.ReleaseDate.ToString("MMMM dd, yyyy") <br />
+                            <strong>Rating:</strong> @book.Rating
+                        </p>
+                        <p class="card-text text-secondary"><strong>Price:</strong> $@book.Price.ToString("F2")</p>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@book.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@book.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@book.Id">Delete</a>
+                        </td>
+                        <form asp-action="AddToCart" method="post">
+                            <input type="hidden" name="MovieId" value="@book.Id" />
+                            <button type="submit" class="btn btn-success">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Modal Structure -->
+                <div class="modal fade" id="bookModal-@book.Id" tabindex="-1" aria-labelledby="bookModalLabel-@book.Id" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="bookModalLabel-@book.Id">@book.Title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="@book.Image" class="img-fluid mb-3" alt="@book.Title">
+                                <p><strong>Genre:</strong> @book.Genre</p>
+                                <p><strong>Release Date:</strong> @book.ReleaseDate.ToString("MMMM dd, yyyy")</p>
+                                <p><strong>Rating:</strong> @book.Rating</p>
+                                <p class="text-secondary"><strong>Price:</strong> $@book.Price.ToString("F2")</p>
+                            </div>
+                            <div class="modal-footer">
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@book.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@book.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@book.Id">Delete</a>
+                                </td>
+                                <form asp-action="AddToCart" method="post">
+                                    <input type="hidden" name="BookId" value="@book.Id" />
+                                    <button type="submit" class="btn btn-success">Add to Cart</button>
+                                </form>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

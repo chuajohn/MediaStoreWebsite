@@ -1,0 +1,83 @@
+﻿@model MovieGenreViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center my-4">Movies</h1>
+
+<div class="container">
+    <!-- Filter Section -->
+    <form asp-controller="Movies" asp-action="Index" method="get" class="d-flex justify-content-center mb-5">
+        <select asp-for="MovieGenre" asp-items="Model.Genres" class="form-select mx-2" style="width: 200px;">
+            <option value="">All Genres</option>
+        </select>
+        <input type="text" asp-for="SearchString" class="form-control mx-2" placeholder="Search by Title" style="width: 300px;" />
+        <input type="submit" value="Filter" class="btn btn-primary mx-2" />
+    </form>
+
+    <p>
+        <a asp-action="Create">Add Movie</a>
+    </p>
+
+    <!-- Card Display for Movies -->
+    <div class="row">
+        @foreach (var movie in Model.Movies!)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card shadow-sm h-100" data-bs-toggle="modal" data-bs-target="#movieModal-@movie.Id">
+                    <img src="@movie.Image" class="card-img-top" alt="@movie.Title" style="height: 400px; object-fit: contain; border-radius: 8px 8px 0 0;">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">@movie.Title</h5>
+                        <p class="card-text">
+                            <strong>Genre:</strong> @movie.Genre <br />
+                            <strong>Release Date:</strong> @movie.ReleaseDate.ToString("MMMM dd, yyyy") <br />
+                            <strong>Rating:</strong> @movie.Rating
+                        </p>
+                        <p class="card-text text-secondary"><strong>Price:</strong> $@movie.Price.ToString("F2")</p>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@movie.Id">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@movie.Id">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@movie.Id">Delete</a>
+                        </td>
+                        <form asp-action="AddToCart" method="post">
+                            <input type="hidden" name="MovieId" value="@movie.Id" />
+                            <button type="submit" class="btn btn-success">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Modal Structure -->
+                <div class="modal fade" id="movieModal-@movie.Id" tabindex="-1" aria-labelledby="movieModalLabel-@movie.Id" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="movieModalLabel-@movie.Id">@movie.Title</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="@movie.Image" class="img-fluid mb-3" alt="@movie.Title">
+                                <p><strong>Genre:</strong> @movie.Genre</p>
+                                <p><strong>Release Date:</strong> @movie.ReleaseDate.ToString("MMMM dd, yyyy")</p>
+                                <p><strong>Rating:</strong> @movie.Rating</p>
+                                <p class="text-secondary"><strong>Price:</strong> $@movie.Price.ToString("F2")</p>
+                            </div>
+                            <div class="modal-footer">
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@movie.Id">Edit</a> |
+                                    <a asp-action="Details" asp-route-id="@movie.Id">Details</a> |
+                                    <a asp-action="Delete" asp-route-id="@movie.Id">Delete</a>
+                                </td>
+                                <form asp-action="AddToCart" method="post">
+                                    <input type="hidden" name="MovieId" value="@movie.Id" />
+                                    <button type="submit" class="btn btn-success">Add to Cart</button>
+                                </form>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

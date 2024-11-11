@@ -1,0 +1,52 @@
+﻿@model MvcMovie.Models.SearchViewModel
+
+<h2>Search Results for "@Model.SearchQuery"</h2>
+
+@if (Model.Movies.Any())
+{
+    <h3>Movies</h3>
+    <ul>
+        @foreach (var movie in Model.Movies)
+        {
+            <li>@movie.Title (@movie.Genre)</li>
+        }
+    </ul>
+}
+
+@if (Model.Books.Any())
+{
+    <h3>Books</h3>
+    <ul>
+        @foreach (var book in Model.Books)
+        {
+            <li>@book.Title (@book.Genre)</li>
+        }
+    </ul>
+}
+
+@if (Model.Games.Any())
+{
+    <h3>Games</h3>
+    <ul>
+        @foreach (var game in Model.Games)
+        {
+            <li>@game.Title (@game.Genre)</li>
+        }
+    </ul>
+}
+
+@if (Model.Music.Any())
+{
+    <h3>Music</h3>
+    <ul>
+        @foreach (var music in Model.Music)
+        {
+            <li>@music.Title (@music.Genre)</li>
+        }
+    </ul>
+}
+
+@if (!Model.Movies.Any() && !Model.Books.Any() && !Model.Games.Any() && !Model.Music.Any())
+{
+    <p>No results found for "@Model.SearchQuery".</p>
+}

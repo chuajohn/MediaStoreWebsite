@@ -1,0 +1,417 @@
+﻿@{
+    <title>ViewData["Title"] = "Home Page";</title>
+}
+
+<div class="container">
+    <div class="jumbotron shadow-effect rounded-corners text-white mb-4" style="background-color: #5D001E;">
+        <h1 class="display-4">Welcome to Funtown</h1>
+        <p class="lead">Dive into a world of fun with our premium collection of media content!</p>
+        <hr class="my-4" style="border-color: #E3AFBC;">
+        <p>We bring you the best in games, movies, music, and books, all in one place.</p>
+        <a class="btn btn-lg" href="#" role="button" style="background-color: #EE4C7C; color: #E3E2DF;">Learn more</a>
+    </div>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p class="mt-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada purus vitae mauris aliquet accumsan. Pellentesque lacinia
+            pulvinar turpis, a efficitur metus euismod vel. Proin quis mi ac arcu imperdiet maximus sed sed massa. Suspendisse faucibus, ante ac
+            imperdiet porttitor, elit nulla eleifend est, ut vestibulum ante ligula sed tortor. Interdum et malesuada fames ac ante ipsum primis in
+            faucibus. Sed sed orci a tellus pharetra dictum. Pellentesque sit amet dignissim ipsum, eu bibendum sem. Nulla consectetur sapien
+            tristique faucibus feugiat. Suspendisse quis odio pellentesque, tempor nunc non, elementum massa. Integer vitae purus nunc. Aliquam
+            sodales maximus ipsum, ut tincidunt massa tristique a. Donec dictum orci semper nulla convallis porttitor at et mauris.
+        </p>
+        <p>
+            Vivamus eu elit tortor. Nullam libero eros, suscipit ac vulputate quis, mollis ac nisl. Nullam nec mi vitae enim malesuada sollicitudin nec ac
+            tortor. Suspendisse potenti. Nam ullamcorper diam eu sem venenatis pharetra. Nunc facilisis tempus urna ut iaculis. Duis non nulla a sem
+            feugiat scelerisque eget a sapien. Aenean a arcu sed nulla ullamcorper mollis et et ligula. Sed lorem massa, convallis et erat ut, rutrum
+            aliquam augue. Duis neque quam, condimentum eget massa quis, volutpat vulputate erat. Proin metus lectus, pharetra fringilla pharetra
+            a, feugiat non risus. Sed eget sapien vitae justo sagittis vestibulum at at elit. Nulla orci mauris, volutpat eu dictum sed, tempus et dui. Ut
+            porttitor suscipit tincidunt.
+        </p>
+        <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+    <br />
+
+    <div id="movieCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="col-md-3 col-sm-6 col-lg-3 mx-auto">
+                    <div class="card card-body">
+                        <a href="/movies">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/TheManWhoLaughs.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 col-lg-3 mx-auto">
+                    <div class="card card-body">
+                        <a href="/movies">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Spider-Man 2.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 col-lg-3 mx-auto">
+                    <div class="card card-body">
+                        <a href="/movies">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/TheCountOfMonteCristo.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 col-lg-3 mx-auto">
+                    <div class="card card-body">
+                        <a href="/movies">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/ChinaTown.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 col-lg-3 mx-auto">
+                    <div class="card card-body">
+                        <a href="/movies">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Ghostbusters.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 col-lg-3 mx-auto">
+                    <div class="card card-body">
+                        <a href="/movies">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Dragon Ball Super Broly.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 col-lg-3 mx-auto">
+                    <div class="card card-body">
+                        <a href="/movies">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/BladeRunner2049.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 col-lg-3 mx-auto">
+                    <div class="card card-body">
+                        <a href="/movies">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Ratatouille.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#movieCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#movieCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="text-center mt-5">
+        <h1 class="display-4">Movies</h1>
+        <p class="mt-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada purus vitae mauris aliquet accumsan. Pellentesque lacinia
+            pulvinar turpis, a efficitur metus euismod vel. Proin quis mi ac arcu imperdiet maximus sed sed massa. Suspendisse faucibus, ante ac
+            imperdiet porttitor, elit nulla eleifend est, ut vestibulum ante ligula sed tortor. Pellentesque sit amet dignissim ipsum, eu bibendum sem.
+            Nulla consectetur sapien tristique faucibus feugiat. Suspendisse quis odio pellentesque, tempor nunc non, elementum massa.
+        </p>
+    </div>
+
+    <div id="gameCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/games">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/SpaceMarine2.jpeg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/games">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Tekken8.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/games">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Diablo4.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/games">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Prototype.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/games">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/ResidentEvil4.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/games">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Civilization6.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/games">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/FinalFantasy16.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/games">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/GodOfWarRagnarök.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#gameCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#gameCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="text-center mt-5">
+        <h1 class="display-4">Games</h1>
+        <p class="mt-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada purus vitae mauris aliquet accumsan. Pellentesque lacinia
+            pulvinar turpis, a efficitur metus euismod vel. Proin quis mi ac arcu imperdiet maximus sed sed massa. Suspendisse faucibus, ante ac
+            imperdiet porttitor, elit nulla eleifend est, ut vestibulum ante ligula sed tortor. Interdum et malesuada fames ac ante ipsum primis in
+            faucibus. Sed sed orci a tellus pharetra dictum. Pellentesque sit amet dignissim ipsum, eu bibendum sem. Nulla consectetur sapien
+            tristique faucibus feugiat.
+        </p>
+    </div>
+
+    <div id="bookCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/books">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/CallOfCthulhu.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/books">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/DoAndroidsDreamOfElectricSheep.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/books">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/1984.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/books">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/TheCatcherInTheRye.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/books">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/AnimalFarm.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/books">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Dracula.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/books">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/TheCountOfMonteCristoBook.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/books">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/LordOfTheFlies.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="text-center mt-5">
+        <h1 class="display-4">Books</h1>
+        <p class="mt-3">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce malesuada purus vitae mauris aliquet accumsan. Pellentesque lacinia
+            pulvinar turpis, a efficitur metus euismod vel. Proin quis mi ac arcu imperdiet maximus sed sed massa. Suspendisse faucibus, ante ac
+            imperdiet porttitor, elit nulla eleifend est, ut vestibulum ante ligula sed tortor. Pellentesque sit amet dignissim ipsum, eu bibendum sem. Nulla consectetur sapien
+            tristique faucibus feugiat. Suspendisse quis odio pellentesque, tempor nunc non, elementum massa. Integer vitae purus nunc.
+        </p>
+    </div>
+
+    <div id="musicCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/music">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/PinkFloydTheDarksideOfTheMoon.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/music">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/ArianaGrandeSweetener.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/music">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/DavidBowieAladdinSane.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/music">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/NirvanaNevermind.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/music">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/Blink182EnemaOfTheState.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/music">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/FleetwoodMacRumours.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/music">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/LizzoCuzILoveYou.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="col-md-3 col-sm-6 mx-auto">
+                    <div class="card card-body">
+                        <a href="/music">
+                            <img class="d-block w-100 uniform-image top-align" src="/images/SgtPeppers.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#musicCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#musicCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="text-center mt-5">
+        <h1 class="display-4">music</h1>
+        <p class="mt-3">
+            Proin quis mi ac arcu imperdiet maximus sed sed massa. Suspendisse faucibus, ante ac
+            imperdiet porttitor, elit nulla eleifend est, ut vestibulum ante ligula sed tortor. Interdum et malesuada fames ac ante ipsum primis in
+            faucibus. Sed sed orci a tellus pharetra dictum. Pellentesque sit amet dignissim ipsum, eu bibendum sem. Nulla consectetur sapien
+            tristique faucibus feugiat. Suspendisse quis odio pellentesque, tempor nunc non, elementum massa. Integer vitae purus nunc. Aliquam
+            sodales maximus ipsum, ut tincidunt massa tristique a. Donec dictum orci semper nulla convallis porttitor at et mauris.
+        </p>
+    </div>
+</div>
